@@ -29,23 +29,25 @@ grails {
       root = '/jsonapiroot'
       // version v1:
       v1 {
-         // supported endpoints for v1
-         endpoints {
-            // /jsonapiroot/v1/person
-            person {
-                // no configuration is needed, apart for the endpoint declaration
-                // in this case the class is resolved looking for the domain Person
-            }
-            book {
-              // you can specify class
-              domain = 'mypkg.Book'
-            }
-            // you can use the endpoints you want
-            people { 
-              domain = 'mypkg.Person'
-              allowed = ['show', 'list']
-            }
-         }
+        // supported endpoints for v1
+        endpoints {
+          // /jsonapiroot/v1/person
+          person {
+            // no configuration is needed, apart for the endpoint declaration
+            // in this case the class is resolved looking for the domain Person
+          }
+          book {
+            // you can specify class
+            domain = 'mypkg.Book'
+          }
+          // you can use the endpoints you want
+          people { 
+            domain = 'mypkg.Person'
+            // you can set allowed actions;
+            // if client calls action out or this list a 405 response is given.
+            allowed = ['show', 'list']
+          }
+        }
       }
     }
   }
