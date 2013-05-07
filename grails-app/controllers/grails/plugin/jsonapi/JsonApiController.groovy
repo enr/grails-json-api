@@ -237,16 +237,11 @@ class JsonApiController implements InitializingBean {
     }
 
     private getEntityConfiguration(apiVersion, entityName) {
-        println "getEntityConfiguration $apiVersion $entityName"
         def versionConfig = pluginConfiguration[apiVersion]
-        println "getEntityConfiguration versionConfig=$versionConfig"
         def endpointsConfig = versionConfig?.endpoints
-        println "getEntityConfiguration endpointsConfig=$endpointsConfig ? ${endpointsConfig.containsKey(entityName)}"
         if (!endpointsConfig || !endpointsConfig.containsKey(entityName)) {
-            println "!!!!!! getEntityConfiguration => return null !!!"
             return null
         }
-        println "getEntityConfiguration => ${endpointsConfig[entityName]}"
         return endpointsConfig[entityName]
     }
 
