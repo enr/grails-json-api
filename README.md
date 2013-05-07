@@ -1,6 +1,8 @@
 Json Api Grails plugin
 ======================
 
+[![Build Status](https://secure.travis-ci.org/enr/grails-json-api.png?branch=master)](http://travis-ci.org/enr/grails-json-api)
+
 Easy creation of Rest Json-based api for Gorm classes.
 
 Features and differences form Json Rest API plugin:
