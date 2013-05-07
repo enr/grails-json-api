@@ -15,6 +15,8 @@ Features and differences form Json Rest API plugin:
 
 - configurable endpoints and allowed actions
 
+- jsonp
+
 
 Configuration
 -------------

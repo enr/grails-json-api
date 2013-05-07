@@ -109,8 +109,11 @@ class JsonApiController implements InitializingBean {
 
     private actionResult(subject, jsonp=false) {
         def gson = gsonBuilder.create()
-        def json = gson.toJson(subject)
-        return [contentType: 'application/json', text: json]
+        def responseText = gson.toJson(subject)
+        if (params.callback) {
+            responseText = "${params.callback}(${responseText})"
+        } 
+        return [contentType: 'application/json', text: responseText]
     }
 
     /*
